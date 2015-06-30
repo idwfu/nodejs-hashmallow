@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app="ghea">
+	<head>
+		<title>Gotta Hash Em All</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/rusha.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/updateval.js"></script>	
+		<script src="js/gotta.js"></script>
+		<script src="core.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="loading">
+		<div id="wrapper"  ng-controller="MainController">
+			<div id="bg"></div>
+			<div id="main">
+					<header id="header">
+						<h1>Errore 404 :c </h1>
+						<h2>C'è qualcosa di bruciato qui, <a href="/">Clicca qui per tornare al sicuro</a></h2>
+					</header>
+					
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Salvatore Criscione. - </span>
+						<a href="help.html">Scopri di più</a> - 
+						<a href="help.html#four">Chi siamo</a>
+					</footer>
+					<script>
+						if (window.File && window.FileReader && window.FileList && window.Blob) {
+							gottaHashEmAll.initialize();
+							if ( gottaHashEmAll.existsFile ) {
+								$("#urlzone").hide();
+								document.getElementById('submitGhea').innerHTML = "Controlla";
+							}
+						} else {
+							alert('Your browser is not supported :c');
+						}
+					</script>
+				
+			</div>
+		</div>
+	</body>
+</html>

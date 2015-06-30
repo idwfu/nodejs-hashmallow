@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html ng-app="mellow">
+	<head>
+		<title>Hashmallow</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+		
+		<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+
+		
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="loading">
+		<center><img src="images/homeloader.gif" /></center>
+		<div id="ehiwait" class="popup" style="display:none">
+			<center>Calcolo dell'impronta in corso <img src="images/loader.gif" style="width:25px;height:25px" /></center>
+		</div>
+		
+		<div id="ehierror" class="popup" style="display:none">
+			<center>File troppo grande, per ora non puoi :c</center>
+		</div>
+		
+		
+		<div id="wrapper"  ng-controller="MainController">
+			<div id="bg"></div>
+			<div id="main">
+					<header id="header">
+						<a href="/" style="tow: 0.1em 0.1em 0.15em #333; "><h1>Hashmallow</h1></a>
+						<p style="text-shadow: 0.1em 0.1em 0.15em #333;">Verifica i tuoi file, senza bisogno di scaricare nulla</p>
+						<br>
+						
+						<div id="form">
+							<label for="fileselect">Seleziona il tuo file: </label>
+							<input type="file" id="fileselect" name="fileselect[]" />
+							<center><div id="filedrag">oppure trascina i tuoi file qui</div></center>
+							<div id="submitbutton">
+								<button type="submit" id="submitGhea" ng-click="createHash()">Salva impronta</button>
+							</div>
+						</div>
+						
+						<input type="text" style="display: none;" id="nome" ng-model="formdata.nome"></input>
+						<input type="text" style="display: none;" id="tipo" ng-model="formdata.tipo"></input>
+						<input type="text" style="display: none;" id="dimensione" ng-model="formdata.dimensione"></input>
+						<input type="text" style="display: none;" id="sha1" ng-model="formdata.sha1"></input>
+						
+						<div id="urlzone">
+							URL: <input type="text" id="urloutput" ng-model="output" placeholder=" Il tuo url apparira qui"></input>
+						</div>
+						<div id="messages">
+								
+							<div id="log" ng-model="fileInfo">
+								<center><table class='u-full-width'>
+									<thead>
+										<tr>
+									  <th>Nome</th>
+									  <th>Tipo</th>
+									  <th>Dimensione</th>
+									  <th>Sha1</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									<td> {{fileInfo.nome}} </td>
+									  <td> {{fileInfo.tipo}} </td>
+									  <td> {{ fileInfo.dimensione }} bytes</td>
+									  <td> {{fileInfo.sha1}} </td>
+									</tr>
+								  </tbody>
+								</table></center>
+							</div>
+						</div>
+					</header>
+					
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Salvatore Criscione. - </span>
+						<a href="help.html">Scopri di più</a> - 
+						<a href="help.html#four">Chi siamo</a>
+					</footer>
+					<script src="js/rusha.min.js"></script>
+					<script src="js/angular.min.js"></script>
+					<script src="js/jquery-2.1.4.min.js"></script>
+					<script src="js/updateval.js"></script>	
+					<script src="js/coremellow.js"></script>
+					<script src="js/core.js"></script>
+					<script>
+						if (window.File && window.FileReader && window.FileList && window.Blob) {
+							hashmellow.initialize();
+							if ( hashmellow.existsFile() ) {
+								hashmellow.initAsFile();
+							} else {
+								hashmellow.initAsNew();
+							}
+						} else {
+							alert('Il tuo browser non è supportato :()');
+						}
+					</script>
+				
+			</div>
+		</div>
+	</body>
+</html>
