@@ -80,7 +80,7 @@
 	}
 
 
-	function ParseFile(file) {
+	ParseFile = function(file) {
 		$("#ehiwait").show();
 		if ( file.size > 200000000 ) {
 			$("#ehiwait").hide();
